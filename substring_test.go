@@ -105,6 +105,18 @@ func TestSubstring_OnlyBothLimits(t *testing.T) {
 			17,
 			"ùêÊäÄöÖüÜçÇ¿ß¡",
 		},
+		"both limits, no unicode, length longer than string length": {
+			"How you doin'",
+			3,
+			30,
+			" you doin'",
+		},
+		"both limits, unicode, length longer than string length": {
+			"ùèàùêÊäÄöÖüÜçÇ¿ß¡£§º©",
+			3,
+			30,
+			"ùêÊäÄöÖüÜçÇ¿ß¡£§º©",
+		},
 	}
 	for title, tc := range testCases {
 		t.Run(title, func(t *testing.T) {

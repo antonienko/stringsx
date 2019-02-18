@@ -14,6 +14,9 @@ func Substring(str string, limits ...int) string {
 		runes = []rune(str)
 		offset = limits[0]
 		length = limits[1]
+		if length > len(runes) {
+			length = len(runes)
+		}
 	case len(limits) == 1:
 		runes = []rune(str)
 		offset = limits[0]
