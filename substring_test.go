@@ -117,6 +117,12 @@ func TestSubstring_OnlyBothLimits(t *testing.T) {
 			30,
 			"ùêÊäÄöÖüÜçÇ¿ß¡£§º©",
 		},
+		"offset greater than length": {
+			"abc",
+			5,
+			1,
+			"",
+		},
 	}
 	for title, tc := range testCases {
 		t.Run(title, func(t *testing.T) {
